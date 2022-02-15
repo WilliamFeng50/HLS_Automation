@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="HLS Test Suite" >
+
+	<!--The runENV should be "QA", "STAG", "PROD" -->
+	<parameter name="runENV" value="QA"></parameter>
+	<parameter name="QAurl" value="https://csan--huat.my.salesforce.com"></parameter>
+	<parameter name="PRODurl" value="https://csan--huat.my.salesforce.com"></parameter>
+	<parameter name="STAGurl" value="https://csan--huat.my.salesforce.com"></parameter>
+	<parameter name="username" value="w.feng@hlstherapeutics.com"></parameter>
+	<!-- parameter name="password" value="Cloud@2022"></parameter -->
+	<parameter name="browser" value="Chrome"></parameter>
+	
+    <listeners>
+        <listener class-name="utils.listeners.TestListener"/>
+        <listener class-name="utils.listeners.AnnotationTransformer"/>
+    </listeners>
+
+    <test name="Functional test">
+        <classes>
+             <class name="testcases.OQ_013_TC_010"/>
+             <class name="testcases.PQ_008_TC_1"/>
+             <class name="testcases.PQ_017_TC_010"/>
+        </classes>
+    </test>
+</suite>
